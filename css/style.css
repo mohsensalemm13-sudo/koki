@@ -1072,28 +1072,62 @@ input, textarea, select {
     background-clip: text;
 }
 
-.orbit-container {
+/* ===== 3D Orbit Container - True 3D Rotation Behind Image ===== */
+.hero-image-wrapper {
+    position: relative;
+}
+
+.hero-image-frame {
+    position: relative;
+}
+
+/* The 3D Scene - Both image and orbit share this space */
+.orbit-3d-scene {
     position: absolute;
     inset: 0;
-    pointer-events: none;
+}
+
+/* The image container */
+.hero-image {
+    position: absolute;
+    inset: 30px;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* The image sits at z-index 10 - icons will go behind (5) or in front (15) */
     z-index: 10;
-    perspective: 2000px;
-    transform-style: preserve-3d;
-    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.2));
+}
+
+/* Orbit container sits at center of the frame */
+.orbit-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* No CSS animation - JavaScript handles the orbit */
+.orbit-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
 }
 
 .orbit-item {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-style: preserve-3d;
-    width: 0;
-    height: 0;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    /* JavaScript will set the position */
 }
 
 .orbit-item .float-element {
-    position: absolute;
     width: 60px;
     height: 60px;
     background: var(--bg-card);
@@ -1104,93 +1138,41 @@ input, textarea, select {
     justify-content: center;
     color: var(--accent-primary);
     font-size: 1.5rem;
-    transition: all var(--transition-normal);
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-    left: 50%;
-    top: 50%;
-    animation: counterRotate 12s linear infinite;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+    position: absolute;
+    /* Smooth transitions */
+    transition: opacity 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
 }
 
-.orbit-item.el-1 {
-    animation: orbit3D-1 12s linear infinite;
+/* When icon is behind the image */
+.orbit-item.behind .float-element {
+    opacity: 0.35;
+    filter: blur(1px);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
 }
 
-.orbit-item.el-2 {
-    animation: orbit3D-2 12s linear infinite;
+/* When icon is in front of the image */
+.orbit-item.front .float-element {
+    opacity: 1;
+    filter: blur(0);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
 }
 
-.orbit-item.el-3 {
-    animation: orbit3D-3 12s linear infinite;
-}
-
-@keyframes orbit3D-1 {
-    0% { transform: translate(-50%, -50%) rotateY(0deg) translateZ(280px) rotateY(0deg); z-index: 20; opacity: 1; filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5)); }
-    25% { transform: translate(-50%, -50%) rotateY(90deg) translateZ(280px) rotateY(-90deg); z-index: 15; opacity: 0.8; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
-    50% { transform: translate(-50%, -50%) rotateY(180deg) translateZ(280px) rotateY(-180deg); z-index: 1; opacity: 0.3; filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.1)); }
-    75% { transform: translate(-50%, -50%) rotateY(270deg) translateZ(280px) rotateY(-270deg); z-index: 15; opacity: 0.8; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
-    100% { transform: translate(-50%, -50%) rotateY(360deg) translateZ(280px) rotateY(-360deg); z-index: 20; opacity: 1; filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5)); }
-}
-
-@keyframes orbit3D-2 {
-    0% { transform: translate(-50%, -50%) rotateY(120deg) translateZ(280px) rotateY(-120deg); z-index: 1; opacity: 0.3; filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.1)); }
-    25% { transform: translate(-50%, -50%) rotateY(210deg) translateZ(280px) rotateY(-210deg); z-index: 15; opacity: 0.8; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
-    50% { transform: translate(-50%, -50%) rotateY(300deg) translateZ(280px) rotateY(-300deg); z-index: 20; opacity: 1; filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5)); }
-    75% { transform: translate(-50%, -50%) rotateY(30deg) translateZ(280px) rotateY(-30deg); z-index: 15; opacity: 0.8; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
-    100% { transform: translate(-50%, -50%) rotateY(120deg) translateZ(280px) rotateY(-120deg); z-index: 1; opacity: 0.3; filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.1)); }
-}
-
-@keyframes orbit3D-3 {
-    0% { transform: translate(-50%, -50%) rotateY(240deg) translateZ(280px) rotateY(-240deg); z-index: 15; opacity: 0.8; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
-    25% { transform: translate(-50%, -50%) rotateY(330deg) translateZ(280px) rotateY(-330deg); z-index: 1; opacity: 0.3; filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.1)); }
-    50% { transform: translate(-50%, -50%) rotateY(60deg) translateZ(280px) rotateY(-60deg); z-index: 15; opacity: 0.8; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
-    75% { transform: translate(-50%, -50%) rotateY(150deg) translateZ(280px) rotateY(-150deg); z-index: 20; opacity: 1; filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5)); }
-    100% { transform: translate(-50%, -50%) rotateY(240deg) translateZ(280px) rotateY(-240deg); z-index: 15; opacity: 0.8; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
-}
-
-@keyframes counterRotate {
-    from { transform: translate(-50%, -50%) rotateY(0deg); }
-    to { transform: translate(-50%, -50%) rotateY(-360deg); }
-}
-
-@keyframes floatElement {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .float-element {
+    .orbit-item .float-element {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .orbit-item .float-element {
         width: 45px;
         height: 45px;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
-    .orbit-item.el-1 { animation-name: orbit3D-1-mobile; }
-    .orbit-item.el-2 { animation-name: orbit3D-2-mobile; }
-    .orbit-item.el-3 { animation-name: orbit3D-3-mobile; }
-}
-
-@keyframes orbit3D-1-mobile {
-    0% { transform: translate(-50%, -50%) rotateY(0deg) translateZ(200px) rotateY(0deg); z-index: 20; opacity: 1; filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4)); }
-    25% { transform: translate(-50%, -50%) rotateY(90deg) translateZ(200px) rotateY(-90deg); z-index: 15; opacity: 0.8; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); }
-    50% { transform: translate(-50%, -50%) rotateY(180deg) translateZ(200px) rotateY(-180deg); z-index: 1; opacity: 0.3; filter: drop-shadow(0 0 3px rgba(212, 175, 55, 0.1)); }
-    75% { transform: translate(-50%, -50%) rotateY(270deg) translateZ(200px) rotateY(-270deg); z-index: 15; opacity: 0.8; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); }
-    100% { transform: translate(-50%, -50%) rotateY(360deg) translateZ(200px) rotateY(-360deg); z-index: 20; opacity: 1; filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4)); }
-}
-
-@keyframes orbit3D-2-mobile {
-    0% { transform: translate(-50%, -50%) rotateY(120deg) translateZ(200px) rotateY(-120deg); z-index: 1; opacity: 0.3; filter: drop-shadow(0 0 3px rgba(212, 175, 55, 0.1)); }
-    25% { transform: translate(-50%, -50%) rotateY(210deg) translateZ(200px) rotateY(-210deg); z-index: 15; opacity: 0.8; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); }
-    50% { transform: translate(-50%, -50%) rotateY(300deg) translateZ(200px) rotateY(-300deg); z-index: 20; opacity: 1; filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4)); }
-    75% { transform: translate(-50%, -50%) rotateY(30deg) translateZ(200px) rotateY(-30deg); z-index: 15; opacity: 0.8; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); }
-    100% { transform: translate(-50%, -50%) rotateY(120deg) translateZ(200px) rotateY(-120deg); z-index: 1; opacity: 0.3; filter: drop-shadow(0 0 3px rgba(212, 175, 55, 0.1)); }
-}
-
-@keyframes orbit3D-3-mobile {
-    0% { transform: translate(-50%, -50%) rotateY(240deg) translateZ(200px) rotateY(-240deg); z-index: 15; opacity: 0.8; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); }
-    25% { transform: translate(-50%, -50%) rotateY(330deg) translateZ(200px) rotateY(-330deg); z-index: 1; opacity: 0.3; filter: drop-shadow(0 0 3px rgba(212, 175, 55, 0.1)); }
-    50% { transform: translate(-50%, -50%) rotateY(60deg) translateZ(200px) rotateY(-60deg); z-index: 15; opacity: 0.8; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); }
-    75% { transform: translate(-50%, -50%) rotateY(150deg) translateZ(200px) rotateY(-150deg); z-index: 20; opacity: 1; filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4)); }
-    100% { transform: translate(-50%, -50%) rotateY(240deg) translateZ(200px) rotateY(-240deg); z-index: 15; opacity: 0.8; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); }
 }
 
 /* Scroll Indicator */

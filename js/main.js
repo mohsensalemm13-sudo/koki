@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initLightbox();
     initAOS();
     initAboutTypewriter();
+    initOrbitAnimation(); // Initialize 3D orbit animation
     
     // Initialize i18n
     window.i18n.init();
@@ -648,4 +649,88 @@ function startTypewriterEffect(element, text) {
     }
 
     type();
+}
+
+// ===== 3D Orbit Animation - Icons orbit around the image going behind and in front =====
+function initOrbitAnimation() {
+    const orbitItems = document.querySelectorAll('.orbit-item');
+    const heroImage = document.querySelector('.hero-image');
+    const orbitContainer = document.querySelector('.orbit-container');
+    
+    if (orbitItems.length === 0 || !heroImage || !orbitContainer) return;
+    
+    // Configuration
+    const animationDuration = 10000; // 10 seconds for full rotation
+    const orbitRadius = getOrbitRadius(); // Get radius based on screen size
+    const startTime = performance.now();
+    
+    // Starting angles for each icon (in degrees) - evenly distributed
+    const startAngles = [0, 120, 240];
+    
+    function getOrbitRadius() {
+        const width = window.innerWidth;
+        if (width <= 480) return 130;
+        if (width <= 768) return 160;
+        if (width <= 992) return 190;
+        return 220;
+    }
+    
+    function updateOrbit() {
+        const elapsed = (performance.now() - startTime) % animationDuration;
+        const progress = elapsed / animationDuration;
+        const currentRotation = progress * 360; // Current rotation in degrees
+        
+        const radius = getOrbitRadius();
+        
+        orbitItems.forEach((item, index) => {
+            // Calculate the current angle of this icon
+            const iconAngle = (startAngles[index] + currentRotation) % 360;
+            const angleRad = (iconAngle * Math.PI) / 180;
+            
+            // Calculate X position (horizontal movement)
+            // cos(0) = 1 (right), cos(90) = 0 (center), cos(180) = -1 (left), cos(270) = 0 (center)
+            const x = Math.cos(angleRad) * radius;
+            
+            // Calculate Y position (small vertical movement for perspective effect)
+            // This creates a slight elliptical path for more natural look
+            const y = Math.sin(angleRad) * (radius * 0.15);
+            
+            // Determine if the icon is behind the image (90-270 degrees = back half of circle)
+            // sin > 0 means the icon is in the back half
+            const isBehind = Math.sin(angleRad) > 0;
+            
+            // Calculate scale based on position (smaller when behind)
+            const depthScale = isBehind ? 0.75 : 1;
+            
+            // Position the orbit item
+            item.style.transform = `translate(${x}px, ${y}px)`;
+            
+            // Position the float element inside
+            const floatElement = item.querySelector('.float-element');
+            if (floatElement) {
+                floatElement.style.transform = `translate(-50%, -50%) scale(${depthScale})`;
+            }
+            
+            // Toggle classes for behind/front styling
+            if (isBehind) {
+                item.classList.add('behind');
+                item.classList.remove('front');
+                item.style.zIndex = '5'; // Behind the image (image is z-index 10)
+            } else {
+                item.classList.remove('behind');
+                item.classList.add('front');
+                item.style.zIndex = '15'; // In front of the image
+            }
+        });
+        
+        requestAnimationFrame(updateOrbit);
+    }
+    
+    // Start the animation loop
+    requestAnimationFrame(updateOrbit);
+    
+    // Update radius on window resize
+    window.addEventListener('resize', () => {
+        // Radius is recalculated on each frame, so no additional action needed
+    });
 }

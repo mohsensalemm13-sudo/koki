@@ -190,33 +190,42 @@
                         <div class="frame-corner top-right"></div>
                         <div class="frame-corner bottom-left"></div>
                         <div class="frame-corner bottom-right"></div>
-                        <div class="hero-image">
-                            <div class="profile-card auto-rotate">
-                                <div class="profile-inner">
-                                    <div class="profile-front">
-                                        <img src="images/about-photo.jpg" alt="Profile">
-                                    </div>
-                                    <div class="profile-back">
-                                        <img src="images/back-profile.jpg" alt="Back Image">
+                        
+                        <!-- 3D Scene Container - Both image and icons share the same 3D space -->
+                        <div class="orbit-3d-scene">
+                            <!-- Profile Image at center (z=0) -->
+                            <div class="hero-image">
+                                <div class="profile-card auto-rotate">
+                                    <div class="profile-inner">
+                                        <div class="profile-front">
+                                            <img src="images/about-photo.jpg" alt="Profile">
+                                        </div>
+                                        <div class="profile-back">
+                                            <img src="images/back-profile.jpg" alt="Back Image">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="floating-elements orbit-container">
-                        <div class="orbit-item el-1">
-                            <div class="float-element">
-                                <i class="fas fa-pen-ruler"></i>
-                            </div>
-                        </div>
-                        <div class="orbit-item el-2">
-                            <div class="float-element">
-                                <i class="fas fa-bezier-curve"></i>
-                            </div>
-                        </div>
-                        <div class="orbit-item el-3">
-                            <div class="float-element">
-                                <i class="fas fa-paint-brush"></i>
+                            
+                            <!-- Orbiting Icons -->
+                            <div class="floating-elements orbit-container">
+                                <div class="orbit-scene">
+                                    <div class="orbit-item el-1">
+                                        <div class="float-element">
+                                            <i class="fas fa-pen-ruler"></i>
+                                        </div>
+                                    </div>
+                                    <div class="orbit-item el-2">
+                                        <div class="float-element">
+                                            <i class="fas fa-bezier-curve"></i>
+                                        </div>
+                                    </div>
+                                    <div class="orbit-item el-3">
+                                        <div class="float-element">
+                                            <i class="fas fa-paint-brush"></i>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
