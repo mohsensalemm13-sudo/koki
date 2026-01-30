@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Yusri | Graphic Designer</title>
+    <meta name="description" content="Graphic Designer focused on creating clean, visually appealing designs - Logos, Posters, Wedding Invitations & More">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="logo-loader">
+                <img src="images/logo-gold.png" alt="Mohamed Yusri Logo" class="loader-logo" id="loaderLogo">
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-icon">
+                    <img src="images/logo-gold.png" alt="Logo" class="logo-img logo-default">
+                    <img src="images/logo-navy.png" alt="Logo" class="logo-img logo-navy">
+                </span>
+                <span class="logo-name" data-i18n="logo">Mohamed Yusri</span>
+            </a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active" data-i18n="nav.home">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link" data-i18n="nav.about">عني</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link" data-i18n="nav.services">الخدمات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">أعمالي</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#footer-contact" class="nav-link" data-i18n="nav.contact">تواصل</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <!-- Theme Switcher -->
+                <div class="theme-switcher">
+                    <button class="theme-btn" id="theme-btn" title="تغيير المظهر">
+                        <i class="fas fa-palette"></i>
+                    </button>
+                    <div class="theme-dropdown" id="theme-dropdown">
+                        <button class="theme-option" data-theme="dark">
+                            <i class="fas fa-moon"></i>
+                            <span data-i18n="theme.dark">داكن</span>
+                        </button>
+                        <button class="theme-option" data-theme="light">
+                            <i class="fas fa-sun"></i>
+                            <span data-i18n="theme.light">فاتح</span>
+                        </button>
+                        <button class="theme-option" data-theme="navy">
+                            <i class="fas fa-water"></i>
+                            <span data-i18n="theme.navy">كحلي</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button class="lang-btn" id="lang-btn" title="Change Language">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <button class="lang-option" data-lang="ar">
+                            <span>العربية</span>
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <span>English</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" id="nav-toggle">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+            </div>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <div class="hero-badge">
+                    <span class="badge-icon"><i class="fas fa-star"></i></span>
+                    <span data-i18n="hero.badge">مصمم جرافيك محترف</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="greeting" data-i18n="hero.greeting">مرحباً، أنا</span>
+                    <span class="name">
+                        <span class="name-highlight" data-i18n="hero.name.first">محمد</span>
+                        <span class="name-highlight gold" data-i18n="hero.name.last">يسري</span>
+                    </span>
+                </h1>
+                
+                <div class="hero-subtitle">
+                    <span data-i18n="hero.subtitle">أحول أفكارك إلى تصاميم</span>
+                    <span class="typed-text" id="typed-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                
+                <p class="hero-description" data-i18n="hero.description">
+                    متخصص في إنشاء تصاميم نظيفة وجذابة بصرياً تخدم هدفاً واضحاً.
+                    من الشعارات المتميزة إلى مختلف أنواع التصاميم المبدعة ودعوات الأفراح.
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="#portfolio" class="btn btn-primary">
+                        <span data-i18n="hero.cta.portfolio">شاهد أعمالي</span>
+                        <i class="fas fa-arrow-right btn-icon rtl-flip"></i>
+                    </a>
+                    <a href="#footer-contact" class="btn btn-outline">
+                        <span data-i18n="hero.cta.contact">تواصل معي</span>
+                        <i class="fas fa-paper-plane btn-icon"></i>
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <span class="stat-number" data-count="50">0</span>
+                        <span class="stat-plus">+</span>
+                        <span class="stat-label" data-i18n="hero.stats.projects">مشروع منجز</span>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                        <span class="stat-number" data-count="30">0</span>
+                        <span class="stat-plus">+</span>
+                        <span class="stat-label" data-i18n="hero.stats.clients">عميل سعيد</span>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
+                        <span class="stat-number" data-count="4">0</span>
+                        <span class="stat-plus">+</span>
+                        <span class="stat-label" data-i18n="hero.stats.experience">سنوات خبرة</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual" data-aos="fade-left" data-aos-duration="1200">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-frame">
+                        <div class="frame-corner top-left"></div>
+                        <div class="frame-corner top-right"></div>
+                        <div class="frame-corner bottom-left"></div>
+                        <div class="frame-corner bottom-right"></div>
+                        <div class="hero-image">
+                            <div class="profile-card auto-rotate">
+                                <div class="profile-inner">
+                                    <div class="profile-front">
+                                        <img src="images/about-photo.jpg" alt="Profile">
+                                    </div>
+                                    <div class="profile-back">
+                                        <img src="images/back-profile.jpg" alt="Back Image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-elements orbit-container">
+                        <div class="orbit-item el-1">
+                            <div class="float-element">
+                                <i class="fas fa-pen-ruler"></i>
+                            </div>
+                        </div>
+                        <div class="orbit-item el-2">
+                            <div class="float-element">
+                                <i class="fas fa-bezier-curve"></i>
+                            </div>
+                        </div>
+                        <div class="orbit-item el-3">
+                            <div class="float-element">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge" data-i18n="about.badge">تعرف علي</span>
+                <h2 class="section-title" data-i18n="about.title">من أنا</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="about-img-wrapper">
+                        <div class="about-img-bg"></div>
+                        <div class="about-img-main">
+                            <img src="images/new-about.jpg" alt="Mohamed Yusri" style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;">
+                        </div>
+                        <div class="experience-badge">
+                            <span class="exp-number">4+</span>
+                            <span class="exp-text" data-i18n="about.exp">سنوات خبرة</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text" data-aos="fade-left" data-aos-duration="1000">
+                    <h3 class="about-heading" data-i18n="about.heading">
+                        مصمم جرافيك يركز على إنشاء تصاميم نظيفة وجذابة
+                    </h3>
+                    
+                    <p class="about-description typewriter-text" id="about-desc-1" data-i18n="about.description">
+                        أعمل على مجموعة متنوعة من مشاريع التصميم الاحترافية، وتتصدر الشعارات قائمة خدماتي الأكثر طلباً، بالإضافة إلى البوسترات، أغلفة المذكرات، وشهادات التقدير، ودعوات الأفراح.
+                    </p>
+                    
+                    <p class="about-description-2 typewriter-text" id="about-desc-2" data-i18n="about.description2">
+                        أسلوبي يجمع بين الحس الجمالي والاهتمام بالتفاصيل والتنفيذ العملي، مما يضمن أن كل تصميم مناسب للطباعة والاستخدام الرقمي. أقدر السرعة والذوق الجيد والتواصل الواضح.
+                    </p>
+                    
+                    <div class="about-info">
+                        <div class="info-item">
+                            <span class="info-icon"><i class="fas fa-calendar-alt"></i></span>
+                            <div class="info-content">
+                                <span class="info-label" data-i18n="about.info.birth">تاريخ الميلاد</span>
+                                <span class="info-value">21/7/2007</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon"><i class="fas fa-phone-alt"></i></span>
+                            <div class="info-content">
+                                <span class="info-label" data-i18n="about.info.phone">الهاتف</span>
+                                <span class="info-value" dir="ltr">+201027169821</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon"><i class="fas fa-flag"></i></span>
+                            <div class="info-content">
+                                <span class="info-label" data-i18n="about.info.nationality">الجنسية</span>
+                                <span class="info-value" data-i18n="about.info.egyptian">مصري</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon"><i class="fas fa-envelope"></i></span>
+                            <div class="info-content">
+                                <span class="info-label" data-i18n="about.info.email">البريد الإلكتروني</span>
+                                <span class="info-value email" dir="ltr">mohamed.yusri.design@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-cta">
+                        <a href="#footer-contact" class="btn btn-primary">
+                            <span data-i18n="about.cta">دعنا نعمل معاً</span>
+                            <i class="fas fa-handshake btn-icon"></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge" data-i18n="services.badge">ما أقدمه</span>
+                <h2 class="section-title" data-i18n="services.title">خدماتي</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.brand.title">الهوية البصرية</h3>
+                    <p class="service-desc" data-i18n="services.brand.desc">
+                        هوية بصرية متكاملة لعلامتك التجارية تشمل كل احتياجاتك البصرية
+                    </p>
+                    <div class="service-features">
+                        <span data-i18n="services.brand.f1">ألوان وخطوط</span>
+                        <span data-i18n="services.brand.f2">قوالب جاهزة</span>
+                        <span data-i18n="services.brand.f3">دليل الهوية</span>
+                    </div>
+                </div>
+
+                <div class="service-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="featured-badge" data-i18n="services.logo.featured">الأكثر طلباً</div>
+                    <div class="service-icon">
+                        <i class="fas fa-copyright"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.logo.title">تصميم الشعارات</h3>
+                    <p class="service-desc" data-i18n="services.logo.desc">
+                        شعارات فريدة ومميزة تعكس هوية علامتك التجارية وتترك انطباعاً دائماً
+                    </p>
+                    <div class="service-features">
+                        <span data-i18n="services.logo.f1">3 مقترحات</span>
+                        <span data-i18n="services.logo.f2">ملفات متعددة</span>
+                        <span data-i18n="services.logo.f3">تعديلات مجانية</span>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-image"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.poster.title">البوسترات والإعلانات</h3>
+                    <p class="service-desc" data-i18n="services.poster.desc">
+                        تصاميم بوسترات جذابة وإعلانات مرئية تلفت الأنظار وتوصل رسالتك بوضوح
+                    </p>
+                    <div class="service-features">
+                        <span data-i18n="services.poster.f1">طباعة عالية</span>
+                        <span data-i18n="services.poster.f2">سوشيال ميديا</span>
+                        <span data-i18n="services.poster.f3">تصميم مخصص</span>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-book"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.covers.title">أغلفة المذكرات</h3>
+                    <p class="service-desc" data-i18n="services.covers.desc">
+                        تصميم أغلفة مذكرات ووثائق احترافية تعكس المحتوى بشكل أنيق
+                    </p>
+                    <div class="service-features">
+                        <span data-i18n="services.covers.f1">أغلفة أمامية</span>
+                        <span data-i18n="services.covers.f2">أغلفة خلفية</span>
+                        <span data-i18n="services.covers.f3">تصميم كامل</span>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-award"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.cert.title">شهادات التقدير</h3>
+                    <p class="service-desc" data-i18n="services.cert.desc">
+                        شهادات تقدير أنيقة ورسمية للمؤسسات والفعاليات والمناسبات المختلفة
+                    </p>
+                    <div class="service-features">
+                        <span data-i18n="services.cert.f1">تصميم راقي</span>
+                        <span data-i18n="services.cert.f2">قابل للتعديل</span>
+                        <span data-i18n="services.cert.f3">جاهز للطباعة</span>
+                    </div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.wedding.title">دعوات الأفراح</h3>
+                    <p class="service-desc" data-i18n="services.wedding.desc">
+                        دعوات زفاف رسمية وغير رسمية تناسب جميع الأذواق وتضفي لمسة خاصة
+                    </p>
+                    <div class="service-features">
+                        <span data-i18n="services.wedding.f1">رسمية وكاجوال</span>
+                        <span data-i18n="services.wedding.f2">طباعة وديجيتال</span>
+                        <span data-i18n="services.wedding.f3">تخصيص كامل</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="services-cta" data-aos="fade-up">
+                <p data-i18n="services.cta.text">جاهز لتحويل أفكارك إلى واقع بإبداع ودقة</p>
+                <a href="#footer-contact" class="btn btn-primary btn-lg">
+                    <span data-i18n="services.cta.btn">ابدأ مشروعك الآن</span>
+                    <i class="fas fa-rocket btn-icon"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio section" id="portfolio">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge" data-i18n="portfolio.badge">أعمالي</span>
+                <h2 class="section-title" data-i18n="portfolio.title">معرض الأعمال</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="portfolio-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all" data-i18n="portfolio.filter.all">الكل</button>
+                <button class="filter-btn" data-filter="logos" data-i18n="portfolio.filter.logos">شعارات</button>
+                <button class="filter-btn" data-filter="posters" data-i18n="portfolio.filter.posters">بوسترات</button>
+                <button class="filter-btn" data-filter="wedding" data-i18n="portfolio.filter.wedding">دعوات أفراح</button>
+                <button class="filter-btn" data-filter="covers" data-i18n="portfolio.filter.covers">أغلفة</button>
+                <button class="filter-btn" data-filter="certificates" data-i18n="portfolio.filter.certificates">شهادات</button>
+            </div>
+            
+            <div class="portfolio-grid" id="portfolio-grid">
+                <!-- Portfolio items will be added dynamically or statically -->
+                <div class="portfolio-item" data-category="logos" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-img">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-copyright"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h4 data-i18n="portfolio.items.logo1">شعار شركة تقنية</h4>
+                                <span data-i18n="portfolio.items.logo">تصميم شعار</span>
+                                <div class="overlay-actions">
+                                    <button class="overlay-btn view-btn" title="عرض">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="overlay-btn link-btn" title="رابط">
+                                        <i class="fas fa-link"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="posters" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-img">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h4 data-i18n="portfolio.items.poster1">بوستر حدث رياضي</h4>
+                                <span data-i18n="portfolio.items.poster">بوستر إعلاني</span>
+                                <div class="overlay-actions">
+                                    <button class="overlay-btn view-btn" title="عرض">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="overlay-btn link-btn" title="رابط">
+                                        <i class="fas fa-link"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="wedding" data-aos="fade-up" data-aos-delay="300">
+                    <div class="portfolio-img">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h4 data-i18n="portfolio.items.wedding1">دعوة زفاف كلاسيكية</h4>
+                                <span data-i18n="portfolio.items.wedding">دعوة فرح</span>
+                                <div class="overlay-actions">
+                                    <button class="overlay-btn view-btn" title="عرض">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="overlay-btn link-btn" title="رابط">
+                                        <i class="fas fa-link"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="covers" data-aos="fade-up" data-aos-delay="400">
+                    <div class="portfolio-img">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h4 data-i18n="portfolio.items.cover1">غلاف مذكرة علمية</h4>
+                                <span data-i18n="portfolio.items.cover">غلاف مذكرة</span>
+                                <div class="overlay-actions">
+                                    <button class="overlay-btn view-btn" title="عرض">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="overlay-btn link-btn" title="رابط">
+                                        <i class="fas fa-link"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="certificates" data-aos="fade-up" data-aos-delay="500">
+                    <div class="portfolio-img">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h4 data-i18n="portfolio.items.cert1">شهادة تقدير رسمية</h4>
+                                <span data-i18n="portfolio.items.cert">شهادة تقدير</span>
+                                <div class="overlay-actions">
+                                    <button class="overlay-btn view-btn" title="عرض">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="overlay-btn link-btn" title="رابط">
+                                        <i class="fas fa-link"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="logos" data-aos="fade-up" data-aos-delay="600">
+                    <div class="portfolio-img">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-copyright"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h4 data-i18n="portfolio.items.logo2">شعار مطعم</h4>
+                                <span data-i18n="portfolio.items.logo">تصميم شعار</span>
+                                <div class="overlay-actions">
+                                    <button class="overlay-btn view-btn" title="عرض">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="overlay-btn link-btn" title="رابط">
+                                        <i class="fas fa-link"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-more" data-aos="fade-up">
+                <button class="btn btn-outline btn-lg" id="load-more">
+                    <span data-i18n="portfolio.loadMore">عرض المزيد</span>
+                    <i class="fas fa-plus btn-icon"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge" data-i18n="testimonials.badge">آراء العملاء</span>
+                <h2 class="section-title" data-i18n="testimonials.title">ماذا يقول عملائي</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="testimonials-slider" data-aos="fade-up">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="testimonial-text" data-i18n="testimonials.t1.text">
+                            تعامل ممتاز وتصميم رائع! محمد فهم احتياجاتي بسرعة وقدم لي شعار يعكس هوية شركتي بشكل مثالي.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4 data-i18n="testimonials.t1.name">أحمد محمود</h4>
+                                <span data-i18n="testimonials.t1.role">صاحب شركة تقنية</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="testimonial-text" data-i18n="testimonials.t2.text">
+                            دعوة الفرح كانت أحلى من اللي تخيلتها! كل الناس سألتني مين اللي عملها. شغل احترافي ومميز.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4 data-i18n="testimonials.t2.name">سارة عبدالله</h4>
+                                <span data-i18n="testimonials.t2.role">عروس</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <p class="testimonial-text" data-i18n="testimonials.t3.text">
+                            أغلفة المذكرات كانت تحفة! التصميم جذاب والجودة عالية جداً. أنصح الجميع بالتعامل معه.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4 data-i18n="testimonials.t3.name">د. محمد علي</h4>
+                                <span data-i18n="testimonials.t3.role">أستاذ جامعي</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonials-nav">
+                <button class="nav-arrow prev" id="prev-testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="testimonials-dots" id="testimonials-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="nav-arrow next" id="next-testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+
+            <div class="testimonials-action" data-aos="fade-up">
+                <button id="open-review-modal" class="btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    <span data-i18n="testimonials.addBtn">أضف رأيك</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Modal -->
+    <div id="review-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-review-modal">&times;</button>
+            <div class="modal-header">
+                <h3 data-i18n="modal.title">إضافة تقييم جديد</h3>
+                <p data-i18n="modal.subtitle">يسعدني سماع رأيك في خدماتي</p>
+            </div>
+            <form id="review-form" class="modal-form">
+                <div class="form-group">
+                    <label for="review-name" data-i18n="contact.form.name">الاسم</label>
+                    <input type="text" id="review-name" name="name" required data-i18n-placeholder="contact.form.namePlaceholder" placeholder="أدخل اسمك">
+                </div>
+                
+                <div class="form-group">
+                    <label for="review-job" data-i18n="modal.job">الوظيفة</label>
+                    <select id="review-job" name="job" required>
+                        <option value="" disabled selected data-i18n="modal.selectJob">اختر الوظيفة</option>
+                        <option value="صاحب شركة" data-i18n="modal.jobs.owner">صاحب شركة</option>
+                        <option value="مدير تسويق" data-i18n="modal.jobs.marketing">مدير تسويق</option>
+                        <option value="رائد أعمال" data-i18n="modal.jobs.entrepreneur">رائد أعمال</option>
+                        <option value="عميل" data-i18n="modal.jobs.client">عميل</option>
+                        <option value="other" data-i18n="modal.jobs.other">أخرى</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="other-job-group" style="display: none;">
+                    <label for="other-job" data-i18n="modal.otherJob">اكتب وظيفتك</label>
+                    <input type="text" id="other-job" name="other_job" data-i18n-placeholder="modal.otherJobPlaceholder" placeholder="مثلاً: مهندس، طالب...">
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="contact.form.rating">التقييم</label>
+                    <div class="star-rating">
+                        <input type="radio" name="modal-rating" id="m-star5" value="5" required><label for="m-star5"><i class="fas fa-star"></i></label>
+                        <input type="radio" name="modal-rating" id="m-star4" value="4"><label for="m-star4"><i class="fas fa-star"></i></label>
+                        <input type="radio" name="modal-rating" id="m-star3" value="3"><label for="m-star3"><i class="fas fa-star"></i></label>
+                        <input type="radio" name="modal-rating" id="m-star2" value="2"><label for="m-star2"><i class="fas fa-star"></i></label>
+                        <input type="radio" name="modal-rating" id="m-star1" value="1"><label for="m-star1"><i class="fas fa-star"></i></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="review-text" data-i18n="contact.form.review">المراجعة</label>
+                    <textarea id="review-text" name="review" rows="4" required data-i18n-placeholder="contact.form.reviewPlaceholder" placeholder="اكتب مراجعتك هنا..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg w-100">
+                    <span data-i18n="contact.form.submit">إرسال المراجعة</span>
+                </button>
+            </form>
+            <div id="modal-success-msg" class="success-message" style="display: none;">
+                <i class="fas fa-check-circle"></i>
+                <p data-i18n="modal.success">تم إرسال رأيك بنجاح للمراجعة، شكراً لك!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="currentColor" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+        
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <a href="#home" class="footer-logo">
+                            <span class="logo-icon">
+                                <img src="images/logo-gold.png" alt="Logo" class="logo-img logo-default">
+                                <img src="images/logo-navy.png" alt="Logo" class="logo-img logo-navy">
+                            </span>
+                            <span class="logo-name" data-i18n="logo">Mohamed Yusri</span>
+                        </a>
+                        <p data-i18n="footer.desc">مصمم جرافيك متخصص في إنشاء تصاميم نظيفة وجذابة تخدم هدفاً واضحاً</p>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <h4 data-i18n="footer.quickLinks">روابط سريعة</h4>
+                        <ul>
+                            <li><a href="#home" data-i18n="nav.home">الرئيسية</a></li>
+                            <li><a href="#about" data-i18n="nav.about">عني</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-services">
+                        <h4 data-i18n="footer.services">الخدمات</h4>
+                        <ul>
+                            <li><a href="#portfolio" data-filter="logos" data-i18n="services.logo.title">تصميم الشعارات</a></li>
+                            <li><a href="#portfolio" data-filter="posters" data-i18n="services.poster.title">البوسترات والإعلانات</a></li>
+                            <li><a href="#portfolio" data-filter="wedding" data-i18n="services.wedding.title">دعوات الأفراح</a></li>
+                            <li><a href="#portfolio" data-filter="covers" data-i18n="services.covers.title">أغلفة المذكرات</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-contact" id="footer-contact">
+                        <h4 data-i18n="footer.contact">تواصل</h4>
+                        <div class="footer-social footer-social-large">
+                            <a href="tel:+201027169821" class="social-icon" title="Phone"><i class="fas fa-phone-alt"></i></a>
+                            <a href="mailto:mohamed.yusri.design@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="https://wa.me/201027169821" target="_blank" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/__mohamed__yusri__?igsh=MXJibWlvOHoxNng0Mg==" target="_blank" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/share/185GfNKu1Y/" target="_blank" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="current-year">2024</span> <span data-i18n="footer.name">Mohamed Yusri</span>. <span data-i18n="footer.rights">جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" title="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+        </div>
+        <button class="lightbox-nav prev" id="lightbox-prev">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <button class="lightbox-nav next" id="lightbox-next">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
