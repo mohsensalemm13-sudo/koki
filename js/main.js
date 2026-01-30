@@ -669,10 +669,10 @@ function initOrbitAnimation() {
     
     function getOrbitRadius() {
         const width = window.innerWidth;
-        if (width <= 480) return 130;
-        if (width <= 768) return 160;
-        if (width <= 992) return 190;
-        return 220;
+        if (width <= 480) return 180;
+        if (width <= 768) return 210;
+        if (width <= 992) return 240;
+        return 270;
     }
     
     function updateOrbit() {
