@@ -72,7 +72,7 @@
 
 @keyframes scaleUp {
     from {
-        transform: scale(1);
+        transform: scale(1.2);
     }
     to {
         transform: scale(1.05);
@@ -103,13 +103,13 @@
         transform: rotate(0deg);
     }
     to {
-        transform: rotate(360deg);
+        transform: rotate(340deg);
     }
 }
 
 @keyframes rotateReverse {
     from {
-        transform: rotate(360deg);
+        transform: rotate(160deg);
     }
     to {
         transform: rotate(0deg);
